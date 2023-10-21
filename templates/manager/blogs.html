@@ -1,0 +1,439 @@
+{% extends 'manager/subbase.html' %}
+{% load static %}
+{% load humanize %}
+{% block body %}
+<div class="block-header">
+    <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>Projects</h2>
+            <ul class="breadcrumb"  style="background-color:transparent!important;">
+                <li class="breadcrumb-item fg-theme"><a class="fg-theme" href="{% url 'dashboard' %}"><i class="zmdi zmdi-home"></i> {{obj.site_name}}</a></li>
+                <li class="breadcrumb-item active">View Projects </li>
+            </ul>
+            <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12">                
+            <button class="btn btn-theme btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+            <a  href="{% url 'add users' %}" class="mr-2 btn btn-success btn-icon float-right" type="button"><i class="zmdi zmdi-plus"></i></a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <div class="blogitem mb-5">
+                    <div class="blogitem-image">
+                        <a href="https://my-chatapp-b4cf5cb6d378.herokuapp.com/dashboard"><img src="{% static 'manager/assets/img/work/chatbuddy.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">May 22, 2023</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Kevin Kibebe</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(45)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://my-chatapp-b4cf5cb6d378.herokuapp.com/dashboard">ChatBuddy:Turning Ideas into Effortless Realities</a></h5>
+                        <p>ChatBuddy encourages brevity. With character limits on your posts, you're encouraged to get straight to the point. It's the perfect platform for those who appreciate succinct communication.
+
+                            *Engage and Connect:*
+                            
+                            Interact with others through replies, likes, and shares. Discover like-minded individuals, follow your favorite personalities, and create your own loyal following.
+                            
+                            *Hashtags and Trends:*
+                            
+                            Stay in the loop with trending topics and hashtags. Join discussions on issues that matter to you, and see what's capturing the attention of the ChatBuddy community.</p>
+                        <a href="https://my-chatapp-b4cf5cb6d378.herokuapp.com/dashboard" class="btn btn-theme btn-rounded">Visit Website</a>
+                    </div>
+                </div>
+                <div class="blogitem mb-5">
+                    <div class="blogitem-image">
+                        <a href="https://my24loan-653812dab21f.herokuapp.com"><img src="{% static 'manager/assets/img/work/my24loan.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">April 10,2023</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Himanshu Gupta</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(10)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://my24loan-653812dab21f.herokuapp.com">My24Loan:Empowering Dreams, One Loan at a Time.</a></h5>
+                        <p>**Empowering Financial Freedom: Your Indian Loan Lending Platform**
+                            In a nation as diverse and dynamic as India, where financial needs often vary greatly, the role of a dedicated loan lending website becomes crucial. Our platform is designed to serve as the bridge between financial aspirations and realities, offering a unique, user-centric approach to lending.
+                            
+                            *Tailored for India:*
+                            
+                            We understand the distinctive financial landscape of India, where aspirations and necessities often intersect. Whether it's a dream home, education, a business venture, or a financial cushion for unforeseen expenses, our platform caters to a wide range of loan requirements. We're not just another lender; we're a partner in your financial journey.</p>
+                        <a href="https://my24loan-653812dab21f.herokuapp.com" class="btn btn-theme btn-rounded">Visit Website</a>
+                    </div>
+                </div>
+                <div class="blogitem mb-5">
+                    <div class="blogitem-image">
+                        <a href="https://qrawler-a85a849b6c24.herokuapp.com/"><img src="{% static 'manager/assets/img/work/qrawler.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">March 13 ,2023</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Asma Hashemi</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(4)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://qrawler-a85a849b6c24.herokuapp.com/">Qrawler:AI & Automation: Turning Ideas into Effortless Realities.</a></h5>
+                        <p>Qrawler is a powerful web automation tool meticulously crafted to streamline your online tasks and make your digital life more efficient. Built on the robust foundation of Selenium, Qrawler offers a seamless and intuitive way to automate web interactions and processes, reducing the time and effort you spend on repetitive online tasks.
+
+                            *Enhancing Productivity:*
+                            
+                            Qrawler is designed with one primary goal in mind: to enhance your productivity. Whether it's data extraction, web testing, or any other online task, this tool simplifies and accelerates your work, allowing you to focus on more strategic and creative endeavors.</p>
+                        <a href="https://qrawler-a85a849b6c24.herokuapp.com/" class="btn btn-theme btn-rounded">Visit Website</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://armlogi-3bc42f23738b.herokuapp.com"><img src="{% static 'manager/assets/img/work/armlogi.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">January 15, 2023</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Jesse Murithi</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(9)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://armlogi-3bc42f23738b.herokuapp.com">Armlogi:Navigating Possibilities, Delivering Certainties.</a></h5>
+                        <p>**Armlogi: Streamlining Shipping and Logistics**
+
+                            Armlogi is a cutting-edge web automation tool tailored for the shipping and logistics industry. With a strong focus on efficiency and accuracy, it simplifies the management of shipments and enhances the tracking of customer data. Whether you're in the business of shipping goods or managing a logistics operation, Armlogi is your ideal companion.
+                            
+                            *Efficient Logistics Management:*
+                            
+                            Armlogi revolutionizes the way you handle logistics, from tracking shipments to managing customer data. It's a versatile solution that empowers you to streamline your processes and make well-informed decisions.</p>
+                        <a href="https://armlogi-3bc42f23738b.herokuapp.com" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://studirre-36417597e0ce.herokuapp.com/"><img src="{% static 'manager/assets/img/work/studirre.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">November 07, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Peter Muli</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(0)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://studirre-36417597e0ce.herokuapp.com/">Studirre:Motivated By The Desire To Achieve.</a></h5>
+                        <p>.In a world where academic excellence is paramount, Studirre emerges as a revolutionary platform designed to bridge the gap between students seeking academic support and skilled professionals eager to lend their expertise. While Studirre is a newcomer, it has quickly established itself as a dynamic and innovative hub that rivals renowned freelancing platforms like Upwork, Freelancer, and Edusson, focusing exclusively on the academic domain.
+
+                            *Quality at the Forefront:*
+                            
+                            Studirre takes immense pride in maintaining exceptional quality standards. Writers on the platform undergo rigorous vetting to confirm their qualifications and proficiency. This unwavering commitment to quality reassures students that they are accessing the finest academic support available.</p>
+                        <a href="https://studirre-36417597e0ce.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://madrasrubberfactory-8cf00512676b.herokuapp.com/"><img src="{% static 'manager/assets/img/work/mrf.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">October 23, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Om Prakash</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(2)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://madrasrubberfactory-8cf00512676b.herokuapp.com/">Madras Rubber Factory:Rolling with Excellence: MRF Tires, Your Road to Quality.</a></h5>
+                        <p>**Welcome to MRF - Where Quality Meets the Road**
+
+                            At MRF, we've been at the forefront of tire manufacturing for decades, ensuring that you have the safest and most comfortable journey on the road. Our website is your gateway to a world of top-tier tires, unparalleled quality, and a legacy of excellence.
+                            
+                            **Discover Our Range:**
+                            
+                            Explore our extensive collection of tires, carefully designed to meet the diverse needs of vehicles, terrains, and driving conditions. From durable all-season tires to high-performance racing variants, we've got your every tire requirement covered.</p>
+                        <a href="https://madrasrubberfactory-8cf00512676b.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://student-examcard-portal-15238722d4bc.herokuapp.com/"><img src="{% static 'manager/assets/img/work/student.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">June 02, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Lennox Londo</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(0)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://student-examcard-portal-15238722d4bc.herokuapp.com/">Student Examcard Portal:Unlocking Your Academic Journey, One Exam Card at a Time.</a></h5>
+                        <p>**Welcome to Your Academic Gateway**
+
+                            Our student exam card portal is your dedicated platform for accessing your exam cards, ensuring that you're well-prepared and ready for your academic assessments. 
+                            
+                            **What We Offer:**
+                            
+                            - **Efficiency:** With just a few clicks, you can conveniently download your exam card, eliminating the hassle of traditional paper-based processes.</p>
+                        <a href="https://student-examcard-portal-15238722d4bc.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://munchbox-69efc9d5dc7c.herokuapp.com/"><img src="{% static 'manager/assets/img/work/munchbox.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">June 02, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Lennox Londo</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(0)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://munchbox-69efc9d5dc7c.herokuapp.com/">MunchBox:Delight Delivered, Your Cravings, Our Priority.</a></h5>
+                        <p>**Feast Express: Your Culinary Playground**
+
+                            Welcome to Feast Express, your one-stop destination for indulging in a world of culinary delights, all from the comfort of your screen. We're here to bring you the convenience of ordering mouthwatering meals, fast food, and snacks with just a few clicks.
+                            
+                            **A Taste for Every Palate:**
+                            
+                            Our website offers an extensive menu that caters to a wide range of tastes. From hearty meals to quick bites, we have it all. Whether you're craving a sumptuous dinner, a pizza night with friends, or just a bag of your favorite snacks, we've got you covered.</p>
+                        <a href="https://munchbox-69efc9d5dc7c.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://nirejeste-2a1c7a6f0309.herokuapp.com/"><img src="{% static 'manager/assets/img/work/safaricom.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">April 05, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Peter walucho</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(0)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://nirejeste-2a1c7a6f0309.herokuapp.com/">Nirejeste:Seamless Payments, Infinite Possibilities.</a></h5>
+                        <p>*
+                            **M-Pesa Integration Hub: Your Gateway to Digital Transactions**
+                            
+                            Welcome to the M-Pesa Integration Hub, the central platform for businesses looking to seamlessly integrate M-Pesa payment solutions into their operations. Our website simplifies the process of registering business short codes, setting up validation mechanisms, and configuring callback URLs to create a robust payment system.
+                            
+                            **What We Offer:**
+                            
+                            - **Streamlined Registration:** Easily register your business's short codes to begin accepting M-Pesa payments efficiently.</p>
+                        <a href="https://nirejeste-2a1c7a6f0309.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+                <div class="blogitem">
+                    <div class="blogitem-image">
+                        <a href="https://nilinde-43896fd32b0a.herokuapp.com/"><img src="{% static 'manager/assets/img/work/nilinde.png' %}" alt="blog image"></a>
+                        <span class="blogitem-date">February 17, 2022</span>
+                    </div>
+                    <div class="blogitem-content">
+                        <div class="blogitem-header">
+                            <div class="blogitem-meta">
+                                <span><i class="zmdi zmdi-account"></i>By <a href="javascript:void(0);">Jackyline Awour</a></span>
+                                <span><i class="zmdi zmdi-comments"></i><a href="#">Comments(8)</a></span>
+                            </div>
+                            <div class="blogitem-share">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter-box"></i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="https://nilinde-43896fd32b0a.herokuapp.com/">Nilinde:Register, Connect, Transform: Your Digital Passport Awaits.</a></h5>
+                        <p>**SafeGuard: Your Guardian Against Public Assaults**
+
+                            Introducing SafeGuard, a dedicated digital platform committed to enhancing safety in public spaces. Our website is your ally in the battle against public assaults, ensuring swift responses and rescue missions when incidents occur.
+                            
+                            **What We Offer:**
+                            
+                            - **Immediate Assistance:** With SafeGuard, you're never alone in a crisis. We facilitate real-time alerts to local rescue teams, swiftly connecting you with help when it's needed the most.</p>
+                        <a href="https://nilinde-43896fd32b0a.herokuapp.com/" class="btn btn-theme btn-rounded">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <ul class="pagination pagination-primary">
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="card">
+                <div class="body search">
+                    <div class="input-group mb-0">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><i class="zmdi zmdi-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>                    
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Categories</strong></h2>                        
+                </div>
+                <div class="body">
+                    <ul class="list-unstyled mb-0 widget-categories">
+                        <li><a href="javascript:void(0);">Front-End Development</a></li>
+                        <li><a href="javascript:void(0);">Back-End Development</a></li>
+                        <li><a href="javascript:void(0);">Full-Stack Development</a></li>
+                        <li><a href="javascript:void(0);">Web Design</a></li>
+                        <li><a href="javascript:void(0);">Web Security</a></li>
+                        <li><a href="javascript:void(0);">E-commerce Development</a></li>
+                        <li><a href="javascript:void(0);">Content Management Systems (CMS)</a></li>
+                        <li><a href="javascript:void(0);">Web Accessibility</a></li>
+                        <li><a href="javascript:void(0);">Mobile Web Development</a></li>
+                        <li><a href="javascript:void(0);">Progressive Web Apps (PWAs)</a></li>
+                        <li><a href="javascript:void(0);">API Development</a></li>
+                        <li><a href="javascript:void(0);">Cloud Development</a></li>
+                        <li><a href="javascript:void(0);">Web Hosting and Infrastructure</a></li>
+                        <li><a href="javascript:void(0);">Web Analytics and SEO</a></li>
+                        <li><a href="javascript:void(0);">Web Performance Optimization</a></li>
+                        <li><a href="javascript:void(0);">Web Development Tools</a></li>
+                        <li><a href="javascript:void(0);">Web Development Education and Training</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Recent</strong> Posts</h2>
+                </div>
+                <div class="body">
+                    <ul class="list-unstyled mb-0 widget-recentpost">
+                        <li>
+                            <a href="#"><img src="{% static 'manager/assets/img/work/app.jpg' %}" alt="blog thumbnail"></a>
+                            <div class="recentpost-content">
+                                <a href="#">App Development</a>
+                                <span>August 01, 2023</span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'manager/assets/img/work/cloud.png' %}" alt="blog thumbnail"></a>
+                            <div class="recentpost-content">
+                                <a href="#">Cloud hosting and management</a>
+                                <span>September 12, 2023</span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'manager/assets/img/work/full.jpg' %}" alt="blog thumbnail"></a>
+                            <div class="recentpost-content">
+                                <a href="##">Full stack development</a>
+                                <span>September 20, 2023</span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'manager/assets/img/work/devops.png' %}" alt="blog thumbnail"></a>
+                            <div class="recentpost-content">
+                                <a href="#">Development and Operations</a>
+                                <span>October 15, 2023</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Tag</strong> Clouds</h2>                        
+                </div>
+                <div class="body">
+                    <ul class="list-unstyled mb-0 tag-clouds">
+                        <li><a href="javascript:void(0);" class="tag badge badge-default">Web Design</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-success">CMS Projects</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-info">Creative UX/UI</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-success">MERN</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-warning">HTML5</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-success">Heroku</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-success">Firebase</a></li>
+                        <li><a href="javascript:void(0);" class="tag badge badge-info">AWS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
