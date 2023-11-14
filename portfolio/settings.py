@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = ['localhost','127.0.0.1','devme-c78b91affa17.herokuapp.com','www.devme-c78b91affa17.herokuapp.com']
 else:
@@ -94,14 +94,18 @@ ASGI_APPLICATION = 'portfolio.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+if DEBUG:
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+	DATABASES = {
+    		'default': dj_database_url.config(default="postgres://ptshbpij:flzDpzzwbJz4bERdrhiLWxeCpvLSKdoM@suleiman.db.elephantsql.com/ptshbpij")
+	}
 
 # DATABASES = {
 #     'default': 
@@ -120,9 +124,7 @@ ASGI_APPLICATION = 'portfolio.asgi.application'
 #             }
 # }
 
-DATABASES = {
-    'default': dj_database_url.config(default="postgres://ptshbpij:flzDpzzwbJz4bERdrhiLWxeCpvLSKdoM@suleiman.db.elephantsql.com/ptshbpij")
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
