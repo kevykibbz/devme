@@ -2,8 +2,8 @@ from pathlib import Path
 import environ
 import os
 import dj_database_url
-import firebase_admin
-from firebase_admin import credentials,storage
+# import firebase_admin
+# from firebase_admin import credentials,storage
 
 env=environ.Env()
 environ.Env.read_env()
@@ -13,14 +13,14 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Use the downloaded JSON file with your Firebase Admin SDK credentials
-service_account=env('SERVICE_ACCOUNT')
-firebase_storage=env('FIREBASE_STORAGE')
+# service_account=env('SERVICE_ACCOUNT')
+# firebase_storage=env('FIREBASE_STORAGE')
 
-cred = credentials.Certificate(os.path.join(BASE_DIR,service_account))
-firebase_admin.initialize_app(cred, {'storageBucket':firebase_storage},name='media_upload_app')
+# cred = credentials.Certificate(os.path.join(BASE_DIR,service_account))
+# firebase_admin.initialize_app(cred, {'storageBucket':firebase_storage},name='media_upload_app')
 
-# Configure the storage bucket
-FIREBASE_BUCKET = storage.bucket(app=firebase_admin.get_app(name='media_upload_app'))
+# # Configure the storage bucket
+# FIREBASE_BUCKET = storage.bucket(app=firebase_admin.get_app(name='media_upload_app'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'storages',
+    # 'storages',
     'django.contrib.staticfiles',
     'installation.apps.InstallationConfig',
     'django.contrib.humanize',
@@ -110,6 +110,8 @@ ASGI_APPLICATION = 'portfolio.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+
 if DEBUG:
 
     DATABASES = {
@@ -118,12 +120,7 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-    # DATABASES = {
-    #     'default': dj_database_url.config(
-    #         default=env('DATABSE_URL'),
-    #         conn_max_age=600, 
-    #     )
-	# }
+    
 else:
 	DATABASES = {
         'default': dj_database_url.config(
