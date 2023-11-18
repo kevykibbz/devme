@@ -718,7 +718,10 @@ class EditReview(View):
         try:
             user=ReviewModel.objects.get(id__exact=id)
             form=ReviewForm(instance=user)
-            data={
+        except DesignModel.DoesNotExist:
+            form=ReviewForm()
+        
+        data={
                 'title':f'Edit Review | {user.name}',
                 'obj':obj,
                 'data':request.user,
@@ -726,17 +729,18 @@ class EditReview(View):
                 'user':user,
                 'edit':True,
             }
-            return render(request,'manager/add_review.html',context=data)
-        except DesignModel.DoesNotExist:
-            data={
-                'title':'Error | Page Not Found',
-                'obj':obj
-             }
-            return render(request,'manager/404.html',context=data,status=404)
+        
+        return render(request,'manager/add_review.html',context=data)
+
     def post(self,request,id,*args , **kwargs):
         if request.headers.get('x-requested-with') == 'XMLHttpRequest':
             user=ReviewModel.objects.get(id__exact=id)
-            form=ReviewForm(request.POST or None,instance=user)
+            try:
+                user=ReviewModel.objects.get(id__exact=id)
+                form=ReviewForm(request.POST or None,instance=user)
+            except DesignModel.DoesNotExist:
+                form=ReviewForm(request.POST or None)
+                
             if form.is_valid():
                 form.save()
                 return JsonResponse({'valid':True,'message':'data updated successfully'},status=200,content_type='application/json')

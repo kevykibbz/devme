@@ -236,7 +236,7 @@ class DesignModel(models.Model):
         return f'{self.user.username} skills set'
 
 class ReviewModel(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    user=models.OneToOneField(User,primary_key=True,on_delete=models.CASCADE)
     name=models.CharField(max_length=100,default=False,blank=True,null=True)
     message=models.TextField(blank=True,null=True)
     profile_pic=models.CharField(max_length=100,default=False,blank=True,null=True)
