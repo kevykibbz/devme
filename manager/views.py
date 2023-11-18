@@ -681,10 +681,11 @@ class AddReview(View):
         obj=SiteConstants.objects.all()[0]
         try:
             # Check if ReviewModel instance with user_id exists
-            user = get_object_or_404(ReviewModel, user_id__exact=request.user.id)
+            user = ReviewModel.objects.get(user_id__exact=request.user.id)
             form = ReviewForm(instance=user)
         except ReviewModel.DoesNotExist:
             form = ReviewForm()
+            
         data={
             'title':'Add Review',
             'obj':obj,
