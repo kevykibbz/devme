@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/site/blogs</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/accounts/login</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/accounts/register</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/static/manager/assets/docs/kevin_kibebe_cv.pdf</loc>
+  <lastmod>2023-11-18T15:11:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/accounts/login?next=/add/users</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://devme-c78b91affa17.herokuapp.com/accounts/reset/password</loc>
+  <lastmod>2023-11-18T15:16:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
