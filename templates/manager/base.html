@@ -26,7 +26,7 @@
   <meta property="og:title" content="{{obj.site_name}} | {{title}}">
   <meta property="og:locale" content="en_US">
   <meta property="og:description" content="{{obj.description}}">
-  <meta property="og:image" content="{% static 'assets/images/favlogo.png' %}">
+  <meta property="og:image" content="{% static 'manager/assets/images/devme_logo.png' %}">
   <meta name="apple-mobile-web-app-title" content="{{obj.site_name}}">
   <meta name="application-name" content="{{obj.site_name}}">
   <meta name="msapplication-TileColor" content="{{obj.theme_color}}">
@@ -34,7 +34,7 @@
   <link rel="manifest" href="{% static 'manager/assets/img/logo/site.html' %}">
   <link href="{% static 'manager/assets/css/iziToast.min.css' %}" rel="stylesheet"/>
   <link rel="mask-icon" href="{% static 'assets/images/icons/safari-pinned-tab.svg' %}" color="#666666">
-  <link rel="shortcut icon" href="{% static 'images/icons/favicon.ico' %}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{obj.favicon.url}}" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/themify-icons.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/bootstrap.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/vendor/animate/animate.css' %}">
@@ -181,10 +181,10 @@
               <p>Follow me</p>
               <hr class="divider">
               <ul class="list-unstyled">
-                <li><a target="_blank" href="{{obj.instagram}}" class="fg-theme"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a target="_blank" href="{{obj.facebook}}" class="fg-theme"><i class="fab fa-facebook"></i> Facebook</a></li>
-                <li><a target="_blank" href="{{obj.twitter}}" class="fg-theme"><i class="fab fa-twitter"></i> Twitter</a></li>
-                <li><a target="_blank" href="{{obj.linkedin}}" class="fg-theme"><i class="fab fa-linkedin"></i> linkedin</a></li>
+                <li><a target="_blank" href="{{obj.user.extendedauthuser.instagram}}" class="fg-theme"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a target="_blank" href="{{obj.user.extendedauthuser.facebook}}" class="fg-theme"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a target="_blank" href="{{obj.user.extendedauthuser.twitter}}" class="fg-theme"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a target="_blank" href="{{obj.user.extendedauthuser.linkedin}}" class="fg-theme"><i class="fab fa-linkedin"></i> linkedin</a></li>
               </ul>
             </div>
           </div>
