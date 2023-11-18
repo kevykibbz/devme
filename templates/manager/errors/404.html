@@ -1,0 +1,19 @@
+{% extends 'manager/errors/base.html' %} 
+{% load static %} 
+{% block error_block %}
+
+<div class="notfound-top">
+  <h1>404</h1>
+</div>
+<div class="content">
+  <img src="{% static 'manager/assets/errors/images/green.png' %}" alt="" title="placeholder" />
+  <h3>
+    "Page Not Found! The requested page could not be found on our server. Double-check the URL or navigate back to the homepage. If you think this is a mistake, please contact support. Thank you."
+  </h3>
+  <ul class="social-icon">
+    <li><a class="fa" href="{{obj.user.extendedauthuser.facebook}}"> </a></li>
+    <li><a class="tw" href="{{obj.user.extendedauthuser.twitter}}"> </a></li>
+    <li><a class="g" href="{{obj.user.extendedauthuser.github}}"> </a></li>
+  </ul>
+</div>
+{% endblock %}

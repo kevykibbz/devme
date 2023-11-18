@@ -241,7 +241,7 @@ class UserPasswordChangeForm(UserCreationForm):
 
 #social form
 class UserSocialForm(forms.ModelForm):
-    facebook=forms.URLField(widget=forms.URLInput(attrs={'style':'text-transform:lowercase;','class':'form-control','aria-label':'facebook','placeholder':'Facebook profile link'}),required=False,validators=[URLValidator])    
+    facebook=forms.URLField(widget=forms.URLInput(attrs={'style':'text-transform:lowercase;','class':'form-control','aria-label':'facebook','placeholder':'Facebook profile link'}),required=False,validators=[URLValidator(schemes=['http', 'https'], message='Enter a valid URL.')])    
     twitter=forms.URLField(widget=forms.URLInput(attrs={'style':'text-transform:lowercase;','class':'form-control','aria-label':'twitter','placeholder':'Twitter profile link'}),required=False,validators=[URLValidator])    
     github=forms.URLField(widget=forms.URLInput(attrs={'style':'text-transform:lowercase;','class':'form-control','aria-label':'github','placeholder':'Github profile link'}),required=False,validators=[URLValidator])  
     instagram=forms.URLField(widget=forms.URLInput(attrs={'style':'text-transform:lowercase;','class':'form-control','aria-label':'instagram','placeholder':'Instagram profile link'}),required=False,validators=[URLValidator])    

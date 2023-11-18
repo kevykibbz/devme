@@ -1,0 +1,19 @@
+{% extends 'manager/errors/base.html' %} 
+{% load static %} 
+{% block error_block %}
+
+<div class="notfound-top">
+  <h1>403</h1>
+</div>
+<div class="content">
+  <img src="{% static 'manager/assets/errors/images/green.png' %}" alt="" title="placeholder" />
+  <h3>
+    "Access Denied! You don't have permission to view this page. If you believe this is an error, please contact support for assistance. Thank you."
+  </h3>
+  <ul class="social-icon">
+    <li><a class="fa" href="{{obj.user.extendedauthuser.facebook}}"> </a></li>
+    <li><a class="tw" href="{{obj.user.extendedauthuser.twitter}}"> </a></li>
+    <li><a class="g" href="{{obj.user.extendedauthuser.github}}"> </a></li>
+  </ul>
+</div>
+{% endblock %}
