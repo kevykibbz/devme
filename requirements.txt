@@ -24,3 +24,4 @@ dj_database_url
 psycopg2
 django-db-multitenant
 firebase-admin
+djangorestframework

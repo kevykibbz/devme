@@ -6,6 +6,7 @@ from .views import *
 from django.contrib.auth import views as auth_views
 urlpatterns=[
     path('',Home.as_view(),name='dashboard'),
+    path('reviewmodel',views.serialize_model_data,name='review_model'),
     path('subscribe',views.subscribe,name='subscribe'),
     path('accounts/login',Login.as_view(),name='login'),
     path('accounts/register',Register.as_view(),name='register'),

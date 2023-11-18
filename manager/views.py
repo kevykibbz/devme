@@ -32,6 +32,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.templatetags.static import static
 from installation.models import SiteConstants
 import re
+from rest_framework.renderers import JSONRenderer
+from .serializers import *
 from six.moves import urllib
 import environ
 env=environ.Env()
@@ -671,14 +673,18 @@ def reviews(request):
 
 #AddReview
 @method_decorator(login_required(login_url='/accounts/login'),name='dispatch')
-@method_decorator(allowed_users(allowed_roles=['admins']),name='dispatch')
 class AddReview(View):
     def get(self,request):
         obj=SiteConstants.objects.count()
         if obj == 0:
             return redirect('/site/installation/')
         obj=SiteConstants.objects.all()[0]
-        form=ReviewForm()
+        try:
+            # Check if ReviewModel instance with user_id exists
+            user = get_object_or_404(ReviewModel, user_id__exact=request.user.id)
+            form = ReviewForm(instance=user)
+        except ReviewModel.DoesNotExist:
+            form = ReviewForm()
         data={
             'title':'Add Review',
             'obj':obj,
@@ -828,3 +834,19 @@ def deleteProject(request,id):
             return JsonResponse({'valid':True,'message':'Project deleted successfully.','id':id},content_type='application/json')       
         except Project.DoesNotExist:
             return JsonResponse({'valid':False,'message':'Project does not exist'},content_type='application/json')
+        
+
+
+@login_required(login_url='/accounts/login')
+def serialize_model_data(request):
+    queryset = ReviewModel.objects.all()
+
+    # Serialize the queryset using the serializer
+    serializer = ReviewModelSerializer(queryset, many=True)
+    serialized_data = JSONRenderer().render(serializer.data)
+
+    # Convert serialized_data to a Python list
+    data = json.loads(serialized_data)
+
+    # Print or return the JSON data
+    return JsonResponse(data, safe=False)

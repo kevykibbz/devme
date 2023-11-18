@@ -6,9 +6,11 @@
         <div class="col-lg-7 col-md-6 col-sm-12">
             <ul class="breadcrumb" style="background-color:transparent!important;">
                 <li class="breadcrumb-item fg-theme"><a class="fg-theme" href="{% url 'dashboard' %}"><i class="zmdi zmdi-home"></i> {{obj.site_name}}</a></li>
+                {% if request.user.is_superuser %}
                 <li class="breadcrumb-item">
                     <a class="fg-theme" href="{% url 'reviews' %}">View Reviews</a>
-                </li>              
+                </li>  
+                {% endif %}            
                 <li class="breadcrumb-item active fg-theme" aria-current="page">{% if edit %} Edit Review {% else %} Add Review{% endif %}</li>
             </ul>
         </div>

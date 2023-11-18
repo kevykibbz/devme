@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'phonenumber_field',
     'mathfilters',
+    'rest_framework',
     'errors.apps.ErrorsConfig',
     'manager.apps.ManagerConfig',
     'django.contrib.sites', #social app 
@@ -71,6 +72,15 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 
 MIDDLEWARE = [
