@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['localhost','127.0.0.1','devme-c78b91affa17.herokuapp.com','www.devme-c78b91affa17.herokuapp.com']
 else:
@@ -114,19 +114,19 @@ ASGI_APPLICATION = 'portfolio.asgi.application'
 
 if DEBUG:
 
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': BASE_DIR / 'db.sqlite3',
-    #     }
-    # }
-    
     DATABASES = {
-        'default': dj_database_url.config(
-            default=env('DATABSE_URL'),
-            conn_max_age=600, 
-        )
-	}
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+    
+    # DATABASES = {
+    #     'default': dj_database_url.config(
+    #         default=env('DATABSE_URL'),
+    #         conn_max_age=600, 
+    #     )
+	# }
     
 else:
 	DATABASES = {
