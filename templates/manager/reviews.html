@@ -44,8 +44,8 @@
                                 <td>{{review.name}}</td>
                                 <td>{{review.created_on}}</td>
                                 <td>
-                                	<a  href="{% url 'edit review' id=review.id %}" class="btn btn-success btn-icon " type="button"><i class="zmdi zmdi-edit"></i></a>
-                                    <a  data-host="{% url 'reviews' %}" href="{% url 'delete review' id=review.id %}" class="del-data btn btn-danger btn-icon " type="button"><i class="zmdi zmdi-delete"></i></a>
+                                	<a  href="{% url 'edit review' id=review.user_id %}" class="btn btn-success btn-icon " type="button"><i class="zmdi zmdi-edit"></i></a>
+                                    <a  data-host="{% url 'reviews' %}" href="{% url 'delete review' id=review.user_id %}" class="del-data btn btn-danger btn-icon " type="button"><i class="zmdi zmdi-delete"></i></a>
                                 </td>
                              </tr>
                              {% empty %}

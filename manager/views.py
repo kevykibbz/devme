@@ -51,7 +51,7 @@ class Home(View):
         user=User.objects.filter(is_superuser=True).first()
         coding_skills=DesignModel.objects.filter(category__icontains='Coding skills').order_by("-id")
         design_skills=DesignModel.objects.filter(category__icontains='Design Skills').order_by("-id")
-        reviews=ReviewModel.objects.all().order_by("-id")[:5]
+        reviews=ReviewModel.objects.all().order_by("-user_id")[:5]
         projects=Project.objects.all().order_by("-id")[:20]
         total_projects=Project.objects.all().count()
         subscribe_form=SubscriberForm()
@@ -658,7 +658,7 @@ def reviews(request):
     if obj == 0:
         return redirect('/site/installation/')
     obj=SiteConstants.objects.all()[0]
-    data=ReviewModel.objects.all().order_by("-id")
+    data=ReviewModel.objects.all().order_by("-user_id")
     paginator=Paginator(data,20)
     page_num=request.GET.get('page')
     reviews=paginator.get_page(page_num)    
@@ -716,7 +716,7 @@ class EditReview(View):
             return redirect('/site/installation/')
         obj=SiteConstants.objects.all()[0]
         try:
-            user=ReviewModel.objects.get(id__exact=id)
+            user=ReviewModel.objects.get(user_id__exact=id)
             form=ReviewForm(instance=user)
         except DesignModel.DoesNotExist:
             form=ReviewForm()
@@ -734,9 +734,9 @@ class EditReview(View):
 
     def post(self,request,id,*args , **kwargs):
         if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-            user=ReviewModel.objects.get(id__exact=id)
+            user=ReviewModel.objects.get(user_id__exact=id)
             try:
-                user=ReviewModel.objects.get(id__exact=id)
+                user=ReviewModel.objects.get(user_id__exact=id)
                 form=ReviewForm(request.POST or None,instance=user)
             except DesignModel.DoesNotExist:
                 form=ReviewForm(request.POST or None)
@@ -754,7 +754,7 @@ class EditReview(View):
 def deleteReview(request,id):
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         try:
-            obj=ReviewModel.objects.get(id__exact=id)
+            obj=ReviewModel.objects.get(user_id__exact=id)
             obj.delete() 
             return JsonResponse({'valid':True,'message':'Review deleted successfully.','id':id},content_type='application/json')       
         except ReviewModel.DoesNotExist:

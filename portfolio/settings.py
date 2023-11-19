@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['localhost','127.0.0.1','devme-c78b91affa17.herokuapp.com','www.devme-c78b91affa17.herokuapp.com']
 else:
@@ -121,48 +121,55 @@ ASGI_APPLICATION = 'portfolio.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+db_name=env('AWS_DATABASE_NAME')
+db_user=env('AWS_DATABASE_USER')
+db_password=env('AWS_DATABASE_PASSWORD')
+db_host=env('AWS_DATABASE_HOST')
+db_port=env('AWS_DATABASE_PORT')
 
 if DEBUG:
 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+   
+    
     # DATABASES = {
     #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': BASE_DIR / 'db.sqlite3',
+
+    #         'ENGINE': 'django.db.backends.postgresql',
+    #         'NAME':db_name,
+    #         'USER':db_user,
+    #         'PASSWORD':db_password,
+    #         'HOST':db_host,
+    #         'PORT':db_port,
     #     }
     # }
     
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=env('DATABSE_URL'),
-            conn_max_age=600, 
-        )
-	}
-    
 else:
-	DATABASES = {
-        'default': dj_database_url.config(
-            default=env('DATABSE_URL'),
-            conn_max_age=600, 
-        )
-	}
+	# DATABASES = {
+    #     'default': dj_database_url.config(
+    #         default=env('DATABASE_URL'),
+    #         conn_max_age=600, 
+    #     )
+	# }
  
+    DATABASES = {
+        'default': {
 
-# DATABASES = {
-#     'default': 
-#             {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME':db_name,
+            'USER':db_user,
+            'PASSWORD':db_password,
+            'HOST':db_host,
+            'PORT':db_port,
+        }
+    }
 
-#                 'ENGINE': 'mysql.connector.django',
-#                 'NAME':env('DATABASE_NAME'),
-#                 'USER':env('DATABASE_USER'),
-#                 'PASSWORD':env('DATABASE_PASSWORD'),
-#                 'HOST':env('DATABASE_HOST'),
-#                 'PORT':env('DATABASE_PORT'),
-#                 'OPTIONS':
-#                 {
-#                     'autocommit':True,
-#                 },
-#             }
-# }
+
 
 
 # Password validation
@@ -230,11 +237,18 @@ BASE_URL=env('BASE_URL')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST=env('EMAIL_HOST')
-EMAIL_HOST_USER=env('EMAIL_USER')
-EMAIL_HOST_PASSWORD=env('EMAIL_PASSWORD')
+
+email_host=env('EMAIL_HOST')
+email_user=env('EMAIL_USER')
+email_password=env('EMAIL_PASSWORD')
+email_port=env('EMAIL_PORT')
+
+
+EMAIL_HOST=email_host
+EMAIL_HOST_USER=email_user
+EMAIL_HOST_PASSWORD=email_password
 EMAIL_USE_TLS=True
-EMAIL_PORT=587 
+EMAIL_PORT=email_port
 DEFAULT_FROM_EMAIL=EMAIL_HOST_USER
 
 
