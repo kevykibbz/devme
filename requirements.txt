@@ -19,6 +19,7 @@ Babel==2.9.1
 requests
 django-cleanup
 xhtml2pdf
+
 django-mathfilters
 dj_database_url
 psycopg2
