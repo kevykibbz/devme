@@ -46,7 +46,7 @@
                         <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="fg-theme tooltips" target="_blank" href="{{request.user.extendedauthuser.instagram|default:'Not Set'}}" data-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
                         <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="fg-theme tooltips" target="_blank" href="{{request.user.extendedauthuser.github|default:'Not Set'}}" data-original-title="Github"><i class="fab fa-github"></i></a></li>
                     </ul>
-                    <p>{{request.user.extendedauthuser.bio|default:'Bio Not Set'}}</p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn-theme btn-md btn-rounded" data-abc="true">Follow</a>
+                    <p>{{request.user.extendedauthuser.bio|truncatechars:100|default:'Bio Not Set'}}</p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn-theme btn-md btn-rounded" data-abc="true">Follow</a>
                     <div class="row text-center m-t-20">
                         <div class="col-lg-4 col-md-4 m-t-20">
                             <h3 class="m-b-0 font-light">{{request.user.extendedauthuser.articles|intcomma}}</h3><small>Articles</small>
