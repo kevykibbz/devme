@@ -25,4 +25,4 @@ psycopg2
 django-db-multitenant
 firebase-admin
 djangorestframework
-pyscopg2-binary
+psycopg2-binary
